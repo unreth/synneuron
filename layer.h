@@ -1,8 +1,6 @@
 #ifndef LAYER_H
 #define LAYER_H
 
-#include <QColor>
-
 #include "neuron.h"
 
 using namespace std;

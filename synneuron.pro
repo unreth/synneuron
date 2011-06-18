@@ -10,15 +10,10 @@ TARGET = synneuron
 TEMPLATE = app
 
 
-SOURCES += main.cpp\
-        mainwindow.cpp
+SOURCES += main.cpp
 
-HEADERS  += mainwindow.h \
+HEADERS  += \
     neuron.h \
-    layer.h \
-    net.h \
-    input.h
+    cortex.h
 
 FORMS    +=
-
-LIBS+=-L/usr/lib/kde -lkdeui

@@ -2,17 +2,13 @@
 #define NET_H
 
 #include <iostream>
-#include <QThread>
-#include <QColor>
-#include <QRgb>
 
-#include "mainwindow.h"
 #include "input.h"
 #include "layer.h"
 
 using namespace std;
 
-class net : public QThread
+class net
 {
 public:
     //constructor
@@ -32,11 +28,6 @@ public:
         }
     }
 
-    //set methods
-    inline void setmainwindow(MainWindow * mw){
-        this->mw = mw;
-    }
-
     //functional methods
     inline void spike() {
         //input
@@ -47,7 +38,7 @@ public:
         layers[0].spike(x.getoutput());
     }
     inline void print(vector< vector<float> > p) {
-//        system("clear");
+        system("clear");
         cout << "time = " << time << endl;
         for(unsigned int i=0; i<p.size(); i++){
             for(unsigned int j=0; j<p[i].size(); j++){
@@ -99,8 +90,6 @@ public:
     }
 
 private:
-    MainWindow * mw;
-
     input x;
     vector<layer> layers;
     vector< vector<float> > t;
